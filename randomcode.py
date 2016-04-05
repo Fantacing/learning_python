@@ -15,7 +15,7 @@ def create_randomcode(nums, bits):
     choicelist = string.letters + string.digits
     count = 0
     while count < nums:
-        strcode = "".join([random.choice(choicelist) for c in range(8)])
+        strcode = "".join([random.choice(choicelist) for c in range(bits)])
         if strcode not in lst:
             lst.append(strcode)
             count += 1

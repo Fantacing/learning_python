@@ -8,7 +8,7 @@ import random
 def guess():
     print("游戏开始！")
     print("输入一个1到100的整数，点击回车：")
-    right_num = random.choice(range(1, 101))
+    right_num = random.randint(1,100)
     count = 0  # 记录猜数次数
     while True:
         try:
