@@ -6,5 +6,5 @@
 - spider.py       ---从网页上爬取图片(使用requests库)
 - stack.py        ---栈
 - queue.py        ---队列
-
+- img2char.py     ---图片转字符(使用pillow库，摘自实验楼)
 
