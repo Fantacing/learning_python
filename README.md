@@ -5,5 +5,6 @@
 - guess.py        ---猜数小游戏
 - spider.py       ---从网页上爬取图片(使用requests库)
 - stack.py        ---栈
+- queue.py        ---队列
 
 
