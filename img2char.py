@@ -3,9 +3,9 @@
 from PIL import Image
 
 
-IMG = "1.jpg"
-WIDTH = 100
-HEIGHT = 100
+IMG = "E:\\SpiderCon\\test1\\1.jpg"
+WIDTH = 50
+HEIGHT = 50
 
 ascii_char = list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
 
@@ -19,7 +19,7 @@ def get_char(r,b,g,alpha = 256):
 
     unit = (256.0 + 1)/length
     return ascii_char[int(gray/unit)]
-
+    
 if __name__ == '__main__':
 
     im = Image.open(IMG)
