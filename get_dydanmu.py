@@ -8,7 +8,7 @@ import threading
 
 #定义房间ID
 #ROOMID=586900
-ROOMID=168118
+ROOMID=93912
 #设置连接超时时间，因为房间可能长时间无人发弹幕，所以酌情设置
 TIMEOUT=10
 
@@ -124,7 +124,3 @@ if __name__ == '__main__':
             print('------------------------------------------------')
     except socket.error,e:
         print '加入房间'+str(ROOMID)+'失败！'
-    
-
-    
-
