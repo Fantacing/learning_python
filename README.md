@@ -8,4 +8,6 @@
 - queue.py        ---队列
 - img2char.py     ---图片转字符(使用pillow库，摘自实验楼)
 - get_dydanmu.py  ---爬取斗鱼弹幕(根据斗鱼201603新版弹幕协议)
+- netroom_server.py  ---网络聊天室(服务器端)
+- netroom_client.py  ---网络聊天室(客户端)
 
