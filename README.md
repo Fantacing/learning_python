@@ -10,4 +10,5 @@
 - get_dydanmu.py  ---爬取斗鱼弹幕(根据斗鱼201603新版弹幕协议)
 - netroom_server.py  ---网络聊天室(服务器端)
 - netroom_client.py  ---网络聊天室(客户端)
+- get_ip_area.py  ---根据ip地址返回ip所在地区
 
