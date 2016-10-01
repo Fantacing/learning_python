@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*-
 import re
 import requests
-
+import os
 
 class Spider(object):
 
@@ -22,7 +22,7 @@ class Spider(object):
         '''将网页内容保存到指定路径'''
         try:
             con = requests.get(url, headers=headers)
-            fp = open(path+"\\"+name, 'wb')
+            fp = open(path+"/"+name, 'wb')
             fp.write(con.content)
             fp.close()
             return True
@@ -45,7 +45,9 @@ def foo1():
             'src="(http://pic.*?.[jpg|png|gif])"', a.get_sourcecode(), re.S)
         for url in urllist:
             print('正在下载第{0}张图片...'.format(j))
-            if(a.save_content(url, 'D:\\test1', str(j)+'.jpg')):
+            if not os.path.exists('images1'):
+                os.mkdir('images1')
+            if(a.save_content(url, 'images1', str(j)+'.jpg')):
                 j += 1
     print('下载完毕，共下载{0}张图片。'.format(j-1))
 
@@ -67,7 +69,9 @@ def foo2():
             print('正在下载第{0}张图片...'.format(j))
             # 在此伪造下Referer，即为源代码的网址
             headers = {"Referer": p_url}
-            if(a.save_content(url[0], 'E:\\test3', str(j)+'.jpg', headers)):
+            if not os.path.exists('images2'):
+                os.mkdir('images2')
+            if(a.save_content(url[0], 'images2', str(j)+'.jpg', headers)):
                 j += 1
     print('下载完毕，共下载{0}张图片。'.format(j-1))
 
