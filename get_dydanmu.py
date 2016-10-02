@@ -1,5 +1,7 @@
 #-*- coding:utf-8 -*-
 
+#command : python get_dydanmu.py 586900  --586900为房间号
+
 import socket
 import sys
 import struct
@@ -10,7 +12,7 @@ import threading
 #ROOMID=586900
 ROOMID=sys.argv[1]
 #设置连接超时时间，因为房间可能长时间无人发弹幕，所以酌情设置
-TIMEOUT=10
+TIMEOUT=60
 
 #返回当前时间
 def get_datetime():
@@ -55,9 +57,14 @@ def send_heartbeat(c_sock):
 #接受socket返回
 def recv_sock(c_sock):  
     while True:
-        reply = c_sock.recv(4096)
-        get_str(reply)
-        time.sleep(0.5)
+        try:
+            reply = c_sock.recv(4096)
+            get_str(reply)
+            time.sleep(0.5)
+        except Exception, e:
+            print u"一分钟内未接收到弹幕消息，退出房间！"
+            sys.exit()
+
 
 #解析收到的字符串
 def get_str(strcon): 

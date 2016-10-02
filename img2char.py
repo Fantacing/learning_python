@@ -1,9 +1,9 @@
 #-*- coding:utf-8 -*-
-
+import  sys
 from PIL import Image
 
 
-IMG = "E:\\SpiderCon\\test1\\1.jpg"
+IMG = sys.argv[1]
 WIDTH = 50
 HEIGHT = 50
 
@@ -33,3 +33,4 @@ if __name__ == '__main__':
         txt += '\n'
 
     print txt
+
